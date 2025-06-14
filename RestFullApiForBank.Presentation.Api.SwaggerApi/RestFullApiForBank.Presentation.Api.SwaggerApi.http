@@ -1,0 +1,6 @@
+@RestFullApiForBank.Presentation.Api.SwaggerApi_HostAddress = http://localhost:5186
+
+GET {{RestFullApiForBank.Presentation.Api.SwaggerApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
