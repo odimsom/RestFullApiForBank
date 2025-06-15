@@ -7,10 +7,10 @@ namespace RestFullApiForBank.Core.Domain.Entities
         private int _edad;
         public required string Nombre { get; set; }
         public required string LastName { get; set; }
-        public DateTime FechaDeNacimineto { get; set; }
+        public required DateTime FechaDeNacimineto { get; set; }
         public required string Telefono { get; set; }
-        public required string Email { get; set; }
-        public string? Direccion { get; set; }
+        public string? Email { get; set; }
+        public required string Direccion { get; set; }
         public int Edad
         {
             get {

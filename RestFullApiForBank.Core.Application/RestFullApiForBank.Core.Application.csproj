@@ -15,13 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\" />
-    <Folder Include="Features\Clientes\Commands\DeleteClienteCommand\" />
-    <Folder Include="Features\Clientes\Commands\UpdateClienteCommand\" />
-    <Folder Include="Features\Clientes\Queries\GetAllClienteQueries\" />
-    <Folder Include="Features\Clientes\Queries\GetClienteByIdQueries\" />
     <Folder Include="Filters\" />
-    <Folder Include="Mappings\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RestFullApiForBank.Core.Domain\RestFullApiForBank.Core.Domain.csproj" />
   </ItemGroup>
 
 </Project>

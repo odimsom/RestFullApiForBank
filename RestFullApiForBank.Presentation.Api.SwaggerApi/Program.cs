@@ -1,4 +1,7 @@
 using RestFullApiForBank.Core.Application;
+using RestFullApiForBank.Infrastructure.Persistence;
+using RestFullApiForBank.Infrastructure.Shared;
+using RestFullApiForBank.Presentation.Api.SwaggerApi.Extensions;
 
 internal class Program
 {
@@ -14,6 +17,9 @@ internal class Program
         builder.Services.AddSwaggerGen();
 
         builder.Services.AddApplicationLayer();
+        builder.Services.AddPersistenceInfrastructure(builder.Configuration);
+        builder.Services.AddSharedInfrastructure(builder.Configuration);
+        builder.Services.AddApiVersioningExtensions();
 
         var app = builder.Build();
 
@@ -27,6 +33,8 @@ internal class Program
         app.UseHttpsRedirection();
 
         app.UseAuthorization();
+        app.UseErrorHandlerMiddleware();
+       
 
         app.MapControllers();
 

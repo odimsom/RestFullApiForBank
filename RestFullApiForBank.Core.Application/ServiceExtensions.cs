@@ -1,5 +1,8 @@
 ﻿using FluentValidation;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using RestFullApiForBank.Core.Application.Behaviours;
+using RestFullApiForBank.Core.Application.Wrappers;
 using System.Reflection;
 
 namespace RestFullApiForBank.Core.Application
@@ -12,6 +15,7 @@ namespace RestFullApiForBank.Core.Application
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
             #endregion
         }
     }

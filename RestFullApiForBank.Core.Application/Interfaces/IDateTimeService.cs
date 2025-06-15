@@ -1,6 +1,6 @@
 ﻿namespace RestFullApiForBank.Core.Application.Interfaces
 {
-    public interface IDateTimeSerivce
+    public interface IDateTimeService
     {
         DateTime NowUtc { get; }
     }
